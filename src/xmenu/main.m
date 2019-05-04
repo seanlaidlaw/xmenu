@@ -11,12 +11,12 @@ char *toReturn = "";
 
 bool topbar = true;
 bool caseSensitive;
-float window_height = 14;
+float window_height = 24;
 const char *promptCStr = "$";
 const char *font;
-const char *normbgcolor = "#1F1F21";
-const char *normfgcolor = "#F7F7F7";
-const char *selbgcolor = "#34AADC";
+const char *normbgcolor = "#1b202a";
+const char *normfgcolor = "#D3D0C8";
+const char *selbgcolor = "#004AC1";
 const char *selfgcolor = "#F7F7F7";
 
 int main(int argc, const char **argv) {
@@ -28,10 +28,11 @@ int main(int argc, const char **argv) {
   drawCtx.sbg = mkColor(selbgcolor);
   drawCtx.sfg = mkColor(selfgcolor);
   drawCtx.x = 0;
-  drawCtx.font_siz = 14.0;  // TODO: Fix shadows
+  drawCtx.font_siz = 12.0;  // TODO: Fix shadows
 
   CFStringRef promptStr = CFStringCreateWithCString(NULL, promptCStr, kCFStringEncodingUTF8);
-  CFStringRef fontStr = CFStringCreateWithCString(NULL, "Consolas", kCFStringEncodingUTF8);
+  //CFStringRef fontStr = CFStringCreateWithCString(NULL, "Operator Mono", kCFStringEncodingUTF8);
+  CFStringRef fontStr = CFStringCreateWithCString(NULL, "Fira Mono for Powerline", kCFStringEncodingUTF8);
   CTFontDescriptorRef fontDesc = CTFontDescriptorCreateWithNameAndSize(fontStr, drawCtx.font_siz);
   CTFontRef font = CTFontCreateWithFontDescriptor(fontDesc, 0.0, NULL);
   CFRelease(fontStr);
